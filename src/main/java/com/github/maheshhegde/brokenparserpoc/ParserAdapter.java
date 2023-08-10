@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface ParserAdapter {
     List<ClassDecl> parse(List<String> sourceFiles, List<String> sourcePath, List<String> classPath) throws IOException;
+
+    default String getName() {
+        return getClass().getSimpleName().replace("Adapter", "");
+    }
 }

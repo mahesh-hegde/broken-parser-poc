@@ -1,6 +1,6 @@
 package org.oss.library.good;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.*;
 
 public class WellFormedClass {
 

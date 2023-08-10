@@ -32,7 +32,6 @@ public class QDoxAdapter implements ParserAdapter {
         for (int i = 0; i < classPath.size(); i++) {
             File classPathFile = new File(classPath.get(i));
             urls[i] = classPathFile.toURI().toURL();
-            System.err.println(urls[i]);
         }
 
         var urlClassLoader = new URLClassLoader(urls, ClassLoader.getSystemClassLoader());

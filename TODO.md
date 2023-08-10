@@ -1,7 +1,7 @@
 - [X] Create POJO classes for Class, Method, Field, Param
 - [X] Parser Interface
-- [ ] QDox parser
-- [ ] Eclipse parser
+- [X] QDox parser
+- [X] Eclipse parser
 - [ ] JavaParser parser
 - [ ] Test Driver
 - [ ] Fields
