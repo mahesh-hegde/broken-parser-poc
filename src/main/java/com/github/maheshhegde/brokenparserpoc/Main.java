@@ -3,6 +3,7 @@ package com.github.maheshhegde.brokenparserpoc;
 import com.github.maheshhegde.brokenparserpoc.ast.ClassDecl;
 import com.github.maheshhegde.brokenparserpoc.ast.Method;
 import com.github.maheshhegde.brokenparserpoc.ecjadapter.EcjAdapter;
+import com.github.maheshhegde.brokenparserpoc.javaparseradapter.JavaParserAdapter;
 import com.github.maheshhegde.brokenparserpoc.qdoxadapter.QDoxAdapter;
 import lombok.SneakyThrows;
 
@@ -90,8 +91,7 @@ public class Main {
         var file = new File(orgOssLibrary, "bad/UnknownLibraryImporter.java");
         var parsed = parseSingleClass(adapter, file);
         var f = getMethodByName(parsed, "getDistanceUsingLD");
-        return getBinaryNameOfParam(f, 0)
-                .equals("org.apache.commons.text.similarity.LevenshteinDistance");
+        return Objects.equals(getBinaryNameOfParam(f, 0), "org.apache.commons.text.similarity.LevenshteinDistance");
     }
 
     // No parser can do this because its not possible.
@@ -104,7 +104,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        var adapters = List.of(new QDoxAdapter(), new EcjAdapter());
+        var adapters = List.of(new QDoxAdapter(), new EcjAdapter(), new JavaParserAdapter());
 
         Map<String, Function<ParserAdapter, Boolean>> checks = new LinkedHashMap<>();
         checks.put("Well formed source class import", Main::checkImportsWellFormed);

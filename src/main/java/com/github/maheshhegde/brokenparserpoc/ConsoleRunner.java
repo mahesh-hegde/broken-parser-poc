@@ -1,6 +1,7 @@
 package com.github.maheshhegde.brokenparserpoc;
 
 import com.github.maheshhegde.brokenparserpoc.ecjadapter.EcjAdapter;
+import com.github.maheshhegde.brokenparserpoc.javaparseradapter.JavaParserAdapter;
 import com.github.maheshhegde.brokenparserpoc.util.JsonPrettyPrinting;
 import lombok.SneakyThrows;
 
@@ -16,7 +17,7 @@ public class ConsoleRunner {
 
     @SneakyThrows
     public static void main(String[] args) {
-        var adapter = new EcjAdapter();
+        var adapter = new JavaParserAdapter();
         var src = defaultSrc;
         if (args.length != 0) {
             src = Arrays.asList(args);

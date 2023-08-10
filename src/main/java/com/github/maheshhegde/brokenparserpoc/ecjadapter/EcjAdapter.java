@@ -8,6 +8,7 @@ import com.github.maheshhegde.brokenparserpoc.ast.TypeUsage;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.*;
 
+import javax.annotation.Nullable;
 import java.io.CharArrayWriter;
 import java.io.FileReader;
 import java.io.IOException;
@@ -98,6 +99,6 @@ public class EcjAdapter implements ParserAdapter {
         if (res != null) {
             return res.getBinaryName();
         }
-        return "unresolved";
+        return null;
     }
 }
